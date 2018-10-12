@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="post">
+    <input type="text" name="1" id="name">
+    <input type="text" name="2" id="email">
+    <input type="text" name="3" id="zip">
+    <input type="text" name="4" id="mobilePhone">
+    <input type="text" name="5" id="company">
+    <input type="text" name="6" id="industry">
+    <input type="submit" value="OK">
+</form>
+</body>
+</html>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://webtracking-v01.bpmonline.com/JS/track-cookies.js"></script>
+<script src="https://webtracking-v01.bpmonline.com/JS/create-object.js"></script>
+<script>
+    /**
+     * Замените выражение в кавычках "css-selector" в коде ниже значением селектора элемента на Вашей лендинговой странице.
+     * Вы можете использовать #id или любой другой CSS селектор, который будет точно определять поле ввода на Вашей лендинговой странице.
+     * Пример: "Email": "#MyEmailField".
+     * Если Ваша лендинговая страница не содержит одного или нескольких полей из приведенных ниже – оставьте строку без изменений или удалите полностью.
+     */
+    var config = {
+        fields: {
+            "Name": "#name", // Имя посетителя, заполнившего форму
+            "Email": "#email", // Email посетителя
+            "Zip": "#zip", // Почтовый индекс посетителя
+            "MobilePhone": "#mobilePhone", // Телефон посетителя
+            "Company": "#company", // Название компании
+            "Industry": "#industry", // Отрасль компании
+            "FullJobTitle": "css-selector", // Должность посетителя
+            "UseEmail": "css-selector", // Логическое значение «да» - согласие посетителя получать email рассылки
+            "City": "css-selector", // Город
+            "Country": "css-selector", // Страна
+            "Commentary": "css-selector", // Примечание
+            "UsrObrService": "css-selector", // Сервис
+            "UsrObrCatService": "css-selector", // Категория сервисов
+            "UsrObrUsluga": "css-selector", // Название услуги
+            "UsrVIPobr": "css-selector", // VIP
+            "UsrDocInSED": "css-selector", // Вид документа в СЭД
+            "UsrCost": "css-selector", // Платное
+            "UsrByer": "css-selector", // Счет выставить:
+            "UsrIntReClass": "css-selector", // Кол-во рекласификаций
+            "UsrIntReOtv": "css-selector", // Кол-во назначений ответственного
+            "UsrServiceHelp": "css-selector", // Подсказка
+            "UsrPhone": "css-selector", // Телефоны
+            "UsrEmail": "css-selector", // Почта
+            "UsrVictim": "css-selector", // Пострадавший
+            "UsrAdres": "css-selector", // Адрес
+            "UsrSolution": "css-selector", // Решение (скопированное)
+            "UsrFirstLineSolution": "css-selector" // Быстрая консультация
+        },
+        landingId: "3f774b9d-0e24-47d7-9a29-a2421d1865c6",
+        serviceUrl: "https://support.urfu.ru/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
+        redirectUrl: ""
+    };
+    /**
+     * Функция ниже создает объект из введенных данных.
+     * Привяжите вызов этой функции к событию "onSubmit" формы или любому другому элементу события.
+     * Пример: <form class="mainForm" name="landingForm" onSubmit="createObject(); return false">
+     */
+    function createObject() {
+        landing.createObjectFromLanding(config)
+    }
+</script>
